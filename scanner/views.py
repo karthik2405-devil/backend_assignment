@@ -37,7 +37,7 @@ def signup(request):
             return render(request, "scanner/signup.html", {
                 "message": "Username already exists."
             })
-        user = User.objects.create_user(username, password)
+        user = User.objects.create_user(username=username, password=password)
         user.save()
         return redirect("index")
     return render(request, "scanner/signup.html")
